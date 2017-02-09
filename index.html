@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>仿知乎头像上传功能</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="./index.css">
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="avatar-editor">
+			<img src="./default.png">
+			<span class="editor-tip">修改头像</span>
+	</div>
+	<form style="display: none;" method="post" enctype="multipart/form-data">
+			<input type="file" accept="image/*" name="picture">
+	</form>
+	<!-- 编辑头像弹窗 -->
+	<div class="modal" id="avatarEditorDialog">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	                <h4 class="modal-title">修改图片</h4>
+	            </div>
+	            <div class="modal-body">
+	                <div class="avatar-editor-container">
+	                    <div class="avatar-editor-window">
+	                        <div class="avatar-editor-window-shadow"></div>
+	                        <div class="avatar-editor-window-inner">
+	                            <img title="拖动相片" src="./default.png">
+	                        </div>
+	                        <img src="./default.png">
+	                    </div>
+	                </div>
+	                <div class="slider-wrap">
+	                    <span class="glyphicon glyphicon-minus"></span>
+	                    <span class="glyphicon glyphicon-plus"></span>
+	                    <div class="slider-horizontal">
+	                        <div class="line"></div>
+	                        <div class="slider-thumb"></div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	                <button type="button" class="btn btn-primary" id="saveAvatar">确定</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</body>
+<script src="./index.js"></script>
+</html>
